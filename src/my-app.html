@@ -1,0 +1,30 @@
+<fast-design-system-provider use-defaults background-color="#fff">
+  <h1>Below is a fast component with a repeat directive</h1>
+  <p>The FAST repeat directive works fine all the time</p>
+  <fast-comp-with-repeat></fast-comp-with-repeat>
+  
+  <h1>Below is an Aurelia 2 string interpolation with an array</h1>
+  <p>ISSUE: Uncomment to the ul below to see the animated-svg2 component fails to render the repeated SVG</p>
+  <!--<ul>
+    <li>${names[0]}</li>
+    <li>${names[1]}</li>
+    <li>${names[2]}</li>
+  </ul>-->
+  
+  <h1>Below is a fast component with a repeat directive, repeating an SVG element</h1>
+  <p>The repeated SVG elements will not be displayed when the UL above is uncommented</p>
+  <animated-svg2 style="bottom: 0; left: 0; width: 100%;"></animated-svg2>
+
+
+  <h2>Notes</h2>
+  <ul>
+    <li>The issue happened when
+      <ul>
+        <li>The FAST component is imported from the page (not from main)</li>
+        <li>There is an array interpolation (anywhere in an Aurelia template</li>
+      </ul>
+    </li>
+    <li>Importing the FAST component with SVG repeat from main fixes the issue</li>
+    <li>Not using arrays in string interpolation in Aurelia templates fixes the issue</li>
+  </ul>
+</fast-design-system-provider>
